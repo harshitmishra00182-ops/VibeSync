@@ -408,7 +408,6 @@ function Ground({ mood }) {
 
 // Special effects per mood
 function SpecialEffects({ mood }) {
-  const settings = moodSettings[mood?.toLowerCase()] || moodSettings.neutral;
   
   if (mood?.toLowerCase() === 'angry') {
     // Volcano crater in center
