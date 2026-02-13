@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import Navbar from './Navbar';
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import Robot from "./robot";
+import Robot from "./Robot";
 import { OrbitControls } from "@react-three/drei";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
