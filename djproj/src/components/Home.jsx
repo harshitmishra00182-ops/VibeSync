@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import Navbar from './Navbar';
+import Navbar from './Navbar.jsx';
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import Robot from "./Robot";
+import Robot from "./Robot.jsx";
 import { OrbitControls } from "@react-three/drei";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
