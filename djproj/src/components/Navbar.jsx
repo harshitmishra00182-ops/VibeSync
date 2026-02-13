@@ -87,20 +87,32 @@ const Navbar = ({ isMinimalist, setIsMinimalist }) => {
                         ? "/my-space"
                         : "/explore"
                     }
-                    className={`no-underline text-xs sm:text-sm uppercase tracking-widest font-bold relative py-2 transition-all duration-500 group ${
-                      isMinimalist
-                        ? 'text-[#880e4f]/80 hover:text-[#ad1457]'
-                        : 'text-white hover:text-purple-500'
-                    }`}
+
+                    // to show(hover) on which page user is
+                    className={({ isActive }) => `
+                      no-underline text-xs sm:text-sm uppercase tracking-widest font-bold relative py-2 transition-all duration-500 group
+                      ${isActive 
+                        ? isMinimalist
+                          ? 'text-[#ad1457] font-black'
+                          : 'text-purple-400 font-black'
+                        : isMinimalist
+                          ? 'text-[#880e4f]/80 hover:text-[#ad1457]'
+                          : 'text-white hover:text-purple-500'
+                      }
+                    `}
                   >
-                    {item}
-                    <span
-                      className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
-                        isMinimalist
-                          ? 'bg-[#ad1457]'
-                          : 'bg-gradient-to-r from-purple-500 to-purple-700'
-                      }`}
-                    />
+                    {({ isActive }) => (
+                      <>
+                        {item}
+                        <span
+                          className={`absolute bottom-0 left-0 h-0.5 transition-all duration-300 ${
+                            isMinimalist
+                              ? 'bg-[#ad1457]'
+                              : 'bg-gradient-to-r from-purple-500 to-purple-700'
+                          } ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}
+                        />
+                      </>
+                    )}
                   </NavLink>
                 </li>
               ))}
@@ -199,11 +211,18 @@ const Navbar = ({ isMinimalist, setIsMinimalist }) => {
                       : "/explore"
                   }
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block px-4 py-3 rounded-lg text-sm uppercase tracking-widest font-bold transition-all duration-300 ${
-                    isMinimalist
-                      ? 'text-[#880e4f]/80 hover:bg-pink-50 hover:text-[#ad1457]'
-                      : 'text-white hover:bg-purple-500/10 hover:text-purple-400'
-                  }`}
+                  // mob hover effect 
+                  className={({ isActive }) => `
+                    block px-4 py-3 rounded-lg text-sm uppercase tracking-widest font-bold transition-all duration-300
+                    ${isActive
+                      ? isMinimalist
+                        ? 'bg-pink-100 text-[#ad1457] font-black'
+                        : 'bg-purple-500/20 text-purple-300 font-black'
+                      : isMinimalist
+                        ? 'text-[#880e4f]/80 hover:bg-pink-50 hover:text-[#ad1457]'
+                        : 'text-white hover:bg-purple-500/10 hover:text-purple-400'
+                    }
+                  `}
                 >
                   {item}
                 </NavLink>
