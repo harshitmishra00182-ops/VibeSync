@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@keyframes scan {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
+
+.animate-scan {
+  animation: scan 8s linear infinite;
+  opacity: 0.3;
+}
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+.animate-vibe {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+@keyframes ambientBreath {
+  0% { opacity: .3; }
+  50% { opacity: .6; }
+  100% { opacity: .3; }
+}
+
+@keyframes floatSoft {
+  0% { transform: translateY(0); opacity:.3; }
+  50% { transform: translateY(-40px); opacity:.6; }
+  100% { transform: translateY(0); opacity:.3; }
+}
+
+@keyframes titleFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
