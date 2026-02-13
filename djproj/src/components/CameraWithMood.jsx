@@ -11,7 +11,7 @@ function estimateYaw(positions) {
   const faceCenterX = (leftEyeOuter.x + rightEyeOuter.x) / 2;
   const faceWidth = rightEyeOuter.x - leftEyeOuter.x;
   
-  // Calculate offset from center
+  //  offset from center
   const offset = (nose.x - faceCenterX) / (faceWidth + 0.0001);
 
   // Convert to degrees convenience k liye

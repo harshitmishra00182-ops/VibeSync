@@ -8,7 +8,6 @@ const Experience = () => {
   const [isMoodLocked, setIsMoodLocked] = useState(false);
   const [lockedMood, setLockedMood] = useState(null);
   
-  // Use locked mood for both music AND HDR when locked
   const activeMood = isMoodLocked ? lockedMood : currentMood;
 
   const [songs, setSongs] = useState([]);
@@ -66,7 +65,7 @@ const Experience = () => {
     loadSongs();
   }, [activeMood, isMoodLocked]);
 
-  // Song loading and playback
+  // Song loading 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio || songs.length === 0) return;
